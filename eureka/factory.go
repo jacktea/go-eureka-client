@@ -109,9 +109,9 @@ func createInstanceInfo(config config.EurekaInstanceConfig, appConfig config.App
 	}
 
 	stringPort := ":" + strconv.Itoa(portj.Port)
-	instanceInfo.StatusPageUrl = scheme + "://" + hostName + stringPort + config.StatusPageUrl
-	instanceInfo.HealthCheckUrl = scheme + "://" + hostName + stringPort + config.HealthCheckUrl
-	instanceInfo.HomePageUrl = scheme + "://" + hostName + stringPort + config.HomePageUrl
+	instanceInfo.StatusPageUrl = scheme + "://" + hostName + stringPort + config.StatusPageUrlPath
+	instanceInfo.HealthCheckUrl = scheme + "://" + hostName + stringPort + config.HealthCheckUrlPath
+	instanceInfo.HomePageUrl = scheme + "://" + hostName + stringPort + config.HomePageUrlPath
 
 	instanceInfo.Metadata = &MetaData{
 		Map: make(map[string]string),
