@@ -6,9 +6,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/tietang/go-eureka-client/eureka/config"
+	"github.com/jacktea/go-eureka-client/eureka/config"
 
-	"gopkg.in/yaml.v2"
+	"github.com/ghodss/yaml"
 )
 
 func main_test() {

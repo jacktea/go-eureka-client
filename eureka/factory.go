@@ -11,9 +11,9 @@ import (
 	"strconv"
 	"time"
 
-	"gopkg.in/yaml.v2"
+	"github.com/ghodss/yaml"
 
-	"github.com/tietang/go-eureka-client/eureka/config"
+	"github.com/jacktea/go-eureka-client/eureka/config"
 	"github.com/tietang/go-utils"
 	"github.com/tietang/props/kvs"
 )

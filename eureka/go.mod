@@ -1,4 +1,4 @@
-module github.com/tietang/go-eureka-client/eureka
+module github.com/jacktea/go-eureka-client/eureka
 
 go 1.12
 
@@ -11,6 +11,7 @@ replace (
 )
 
 require (
+	github.com/ghodss/yaml v1.0.0
 	github.com/go-ini/ini v1.42.0 // indirect
 	github.com/sirupsen/logrus v1.4.0
 	github.com/smartystreets/goconvey v0.0.0-20190306220146-200a235640ff
@@ -18,5 +19,5 @@ require (
 	github.com/tietang/props v2.1.0+incompatible
 	github.com/valyala/fasttemplate v1.0.1 // indirect
 	gopkg.in/ini.v1 v1.42.0 // indirect
-	gopkg.in/yaml.v2 v2.2.2
+	gopkg.in/yaml.v2 v2.2.2 // indirect
 )

@@ -1,4 +1,4 @@
-module github.com/tietang/go-eureka-client/eureka
+module github.com/jacktea/go-eureka-client/eureka
 
 go 1.12
 
@@ -13,6 +13,7 @@ replace (
 require (
 	github.com/ArthurHlt/gominlog v0.0.0-20170402142412-72eebf980f46 // indirect
 	github.com/fatih/color v1.7.0 // indirect
+	github.com/ghodss/yaml v1.0.0 // indirect
 	github.com/mattn/go-colorable v0.1.1 // indirect
 	github.com/mattn/go-isatty v0.0.7 // indirect
 	github.com/sirupsen/logrus v1.4.0 // indirect
@@ -20,5 +21,4 @@ require (
 	github.com/tietang/go-utils v0.0.0-20190308094824-9e17fa5e3788 // indirect
 	github.com/tietang/props v2.1.0+incompatible // indirect
 	github.com/valyala/fasttemplate v1.0.1 // indirect
-	gopkg.in/yaml.v2 v2.2.2 // indirect
 )

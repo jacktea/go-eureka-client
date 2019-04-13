@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tietang/go-eureka-client/eureka/config"
+	"github.com/jacktea/go-eureka-client/eureka/config"
 )
 
 const (

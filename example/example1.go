@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"encoding/json"
-	"github.com/tietang/go-eureka-client/eureka"
+	"github.com/jacktea/go-eureka-client/eureka"
 	"strconv"
 	"syscall"
 )
