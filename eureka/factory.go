@@ -153,14 +153,42 @@ func exists(filename string) bool {
 	return err == nil || os.IsExist(err)
 }
 
-func CreateEurekaClientByYaml(fileName string) *Client {
-	file, _ := os.Getwd()
-	fmt.Println("current path:", file)
-	if fileName == "" {
-		fileName = "application.yml"
+func validatePath(dirs []string) (string, bool) {
+	for _, v := range dirs {
+		if len(v) > 0 {
+			v, _ = filepath.Abs(v)
+			if exists(v) {
+				return v, true
+			}
+		}
 	}
+	return "", false
+}
 
-	cfg := file + "/" + fileName //"/application.yml"
+func CreateEurekaClientByYaml(fileName string) *Client {
+
+	//cfg := ""
+	//if filepath.IsAbs(fileName) {
+	//	cfg = fileName
+	//} else {
+	//	file, _ := os.Getwd()
+	//	fmt.Println("current path:", file)
+	//	if fileName == "" {
+	//		fileName = "application.yml"
+	//	}
+	//	cfg = file + "/" + fileName //"/application.yml"
+	//}
+
+	//if exists(cfg) {
+	//
+	//	data, err := ReadFile(cfg)
+	//	err = yaml.Unmarshal([]byte(data), c)
+	//	if err != nil {
+	//		fmt.Println("error: %v", err)
+	//	}
+	//} else {
+	//	fmt.Println("error: file %s not exists.", cfg)
+	//}
 
 	c := &config.EurekaConfig{
 		Eureka: config.Eureka{
@@ -169,8 +197,17 @@ func CreateEurekaClientByYaml(fileName string) *Client {
 		},
 	}
 
-	if exists(cfg) {
-
+	appPath, _ := filepath.Abs(filepath.Dir(os.Args[0]))
+	workPath, _ := os.Getwd()
+	if fileName == "" {
+		fileName = "application.yml"
+	}
+	cfg, ok := validatePath([]string{
+		fileName,
+		filepath.Join(appPath, fileName),
+		filepath.Join(workPath, fileName),
+	})
+	if ok {
 		data, err := ReadFile(cfg)
 		err = yaml.Unmarshal([]byte(data), c)
 		if err != nil {
