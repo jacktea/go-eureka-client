@@ -14,7 +14,7 @@ func (c *Client) SendHeartbeat(appId, instanceId string) error {
 		log.WithFields(log.Fields{
 			"path":   path,
 			"status": res.StatusCode,
-		}).Info("SendHeartbeat ")
+		}).Debug("SendHeartbeat ")
 	}
 	return err
 }
@@ -30,7 +30,7 @@ func (c *Client) UpdateMetadata(appId, instanceId string, metaData map[string]st
 		log.WithFields(log.Fields{
 			"path":   path,
 			"status": res.StatusCode,
-		}).Info("UpdateMetadata ")
+		}).Debug("UpdateMetadata ")
 	}
 	return err
 }
@@ -44,7 +44,7 @@ func (c *Client) UpdateStatus(appId, instanceId string, status string) error {
 		log.WithFields(log.Fields{
 			"path":   path,
 			"status": res.StatusCode,
-		}).Info("UpdateStatus ")
+		}).Debug("UpdateStatus ")
 	}
 	return err
 }

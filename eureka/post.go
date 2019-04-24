@@ -29,7 +29,7 @@ func (c *Client) RegisterInstance(appName string, instanceInfo *InstanceInfo) er
 			"path":   path,
 			"status": res.StatusCode,
 			"body":   string(body),
-		}).Info("RegisterInstance ")
+		}).Debug("RegisterInstance ")
 	}
 
 	if res.StatusCode != http.StatusNoContent {
