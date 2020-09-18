@@ -1,4 +1,4 @@
-module github.com/jacktea/go-eureka-client/eureka
+module github.com/jacktea/go-eureka-client
 
 go 1.12
 
